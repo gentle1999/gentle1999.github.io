@@ -1,0 +1,6 @@
+---
+title: "Representative Projects"
+lang: en
+---
+
+{{< include _generated/projects.en.qmd >}}

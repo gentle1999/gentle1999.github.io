@@ -1,0 +1,71 @@
+---
+title: "首页"
+lang: zh
+listing: false
+title-block-style: none
+body-classes: no-default-title
+---
+
+::: {.profile-hero}
+::: {.profile-copy}
+# {{< var profile.name_zh >}}
+
+::: {.profile-role}
+{{< var profile.role_zh >}} · {{< var profile.affiliation_zh >}}
+:::
+
+::: {.profile-aliases}
+{{< var profile.aliases_line_zh >}}
+:::
+
+::: {.profile-summary}
+{{< var profile.research_summary_zh >}}
+:::
+
+::: {.profile-interests}
+**研究兴趣：**计算化学；反应机器学习；分子与反应数据基础设施；量子化学数据集；化学信息学。
+:::
+
+::: {.profile-details}
+{{< var profile.academic_line_zh >}}
+:::
+
+::: {.profile-actions}
+[简历](cv.qmd){.quiet-link}
+[PDF 简历](/{{< var profile.cv_pdf_zh >}}){.quiet-link}
+[论文](publications.qmd){.quiet-link}
+[项目](projects.qmd){.quiet-link}
+[GitHub]({{< var profile.github_url >}}){.quiet-link}
+[Google Scholar]({{< var profile.google_scholar_url >}}){.quiet-link}
+:::
+:::
+
+::: {.profile-aside}
+<img class="profile-photo" src="/{{< var profile.image >}}" alt="{{< var profile.name_zh >}}">
+
+::: {.contact-list}
+**Email**  
+[{{< var profile.email >}}](mailto:{{< var profile.email >}})
+
+**地点**  
+{{< var profile.location >}}
+
+**ORCID**  
+[{{< var profile.orcid >}}]({{< var profile.orcid_url >}})
+
+**Google Scholar**  
+[个人资料]({{< var profile.google_scholar_url >}})
+:::
+:::
+:::
+
+## 学术简介
+
+汤缪炅，浙江杭州人，1999年生。2022年本科毕业于浙江大学化学系（导师：洪鑫教授），2022年硕士入学浙江大学化学系（导师：洪鑫教授），2025年转为博士研究生（导师：洪鑫教授）。研究方向为数据驱动的有机合成反应建模和计算加速。目前聚焦于使用人工智能方法加速化学反应机制模拟，和实验合成实现干湿对齐，促进化学合成发现。
+
+## 研究方向
+
+- **机理感知反应建模：** 面向不对称催化、选择性预测、催化剂选择、外推预测和构效关系的机器学习方法。
+- **分子与反应数据基础设施：** 面向文献反应、量子化学计算、离子、自由基和过渡金属体系的可复用数据资源。
+- **分子表征：** 基于谱图、立体结构、原子量子化学性质、分子图拓扑和反应键变化的描述符与学习表征。
+- **化学信息学与科研软件：** 连接分子数据解析、计算、查询、可视化和可复现分析流程的 Python 工具。

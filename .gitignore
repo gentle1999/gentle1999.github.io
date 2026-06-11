@@ -1,0 +1,46 @@
+_site/
+.freeze/
+_freeze/
+.quarto/
+.venv/
+.ruff_cache/
+.pytest_cache/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.tmp/
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.xls
+*.xlsx
+
+# Local reference/private source documents. Keep publishable CV PDFs generated from Typst below.
+assets/2024-汤缪炅-个人简历.pdf
+assets/个人简历-徐丽成-最新.pdf
+assets/求是新星培养计划.docx
+
+/.quarto/
+**/*.quarto_ipynb
+
+# Generated from templates by scripts/configure_site.py
+_quarto.yml
+_variables.yml
+
+# Generated from external data update scripts
+_generated/
+data/repos.json
+data/publications.json
+data/publication_images.json
+data/publication_pdfs.json
+publications.bib
+assets/publications/generated/
+assets/publications/pdfs/
+
+# Generated from Typst CV source and publication metadata
+cv/publications.typ
+cv/publications.zh.typ
+assets/miao-jiong-tang-cv.pdf
+assets/tang-miaojiong-cv-zh.pdf

@@ -1,0 +1,116 @@
+name: Publish Quarto Site
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "24 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_USERNAME: ${{ github.repository_owner }}
+      PROFILE_NAME: ${{ vars.PROFILE_NAME }}
+      PROFILE_DISPLAY_NAME: ${{ vars.PROFILE_DISPLAY_NAME }}
+      PROFILE_ALIASES: ${{ vars.PROFILE_ALIASES }}
+      PROFILE_ALIASES_ZH: ${{ vars.PROFILE_ALIASES_ZH }}
+      SITE_TITLE: ${{ vars.SITE_TITLE }}
+      SITE_URL: ${{ vars.SITE_URL }}
+      SITE_REPO_URL: ${{ vars.SITE_REPO_URL }}
+      SITE_DESCRIPTION: ${{ vars.SITE_DESCRIPTION }}
+      SITE_KEYWORDS: ${{ vars.SITE_KEYWORDS }}
+      PROFILE_NAME_ZH: ${{ vars.PROFILE_NAME_ZH }}
+      PROFILE_ROLE_ZH: ${{ vars.PROFILE_ROLE_ZH }}
+      PROFILE_AFFILIATION_ZH: ${{ vars.PROFILE_AFFILIATION_ZH }}
+      PROFILE_ROLE: ${{ vars.PROFILE_ROLE }}
+      PROFILE_AFFILIATION: ${{ vars.PROFILE_AFFILIATION }}
+      PROFILE_LOCATION: ${{ vars.PROFILE_LOCATION }}
+      PROFILE_EMAIL: ${{ vars.PROFILE_EMAIL }}
+      PROFILE_PHONE: ${{ vars.PROFILE_PHONE }}
+      PROFILE_POLITICAL_STATUS: ${{ vars.PROFILE_POLITICAL_STATUS }}
+      PROFILE_POLITICAL_STATUS_ZH: ${{ vars.PROFILE_POLITICAL_STATUS_ZH }}
+      PROFILE_ENGLISH_LEVEL: ${{ vars.PROFILE_ENGLISH_LEVEL }}
+      PROFILE_ENGLISH_LEVEL_ZH: ${{ vars.PROFILE_ENGLISH_LEVEL_ZH }}
+      PROFILE_BIRTH_YM: ${{ vars.PROFILE_BIRTH_YM }}
+      PROFILE_BIRTH_YM_ZH: ${{ vars.PROFILE_BIRTH_YM_ZH }}
+      PROFILE_IMAGE: ${{ vars.PROFILE_IMAGE }}
+      PROFILE_GITHUB_USERNAME: ${{ vars.PROFILE_GITHUB_USERNAME }}
+      PROFILE_GITHUB_URL: ${{ vars.PROFILE_GITHUB_URL }}
+      PROFILE_ORCID: ${{ vars.PROFILE_ORCID }}
+      PROFILE_ORCID_URL: ${{ vars.PROFILE_ORCID_URL }}
+      PROFILE_GOOGLE_SCHOLAR_URL: ${{ vars.PROFILE_GOOGLE_SCHOLAR_URL }}
+      PROFILE_CV_PDF: ${{ vars.PROFILE_CV_PDF }}
+      PROFILE_CV_PDF_ZH: ${{ vars.PROFILE_CV_PDF_ZH }}
+      PROFILE_RESEARCH_SUMMARY: ${{ vars.PROFILE_RESEARCH_SUMMARY }}
+      PROFILE_RESEARCH_SUMMARY_ZH: ${{ vars.PROFILE_RESEARCH_SUMMARY_ZH }}
+      PUBLICATION_IMAGE_MIN_CONFIDENCE: ${{ vars.PUBLICATION_IMAGE_MIN_CONFIDENCE || 'medium' }}
+      PUBLICATION_IMAGE_TIMEOUT: ${{ vars.PUBLICATION_IMAGE_TIMEOUT || '30' }}
+      PUBLICATION_IMAGE_FORCE: ${{ vars.PUBLICATION_IMAGE_FORCE || '0' }}
+      PUBLICATION_IMAGE_STRICT: ${{ vars.PUBLICATION_IMAGE_STRICT || '0' }}
+      PUBLICATION_PDF_MIN_CONFIDENCE: ${{ vars.PUBLICATION_PDF_MIN_CONFIDENCE || 'medium' }}
+      PUBLICATION_PDF_TIMEOUT: ${{ vars.PUBLICATION_PDF_TIMEOUT || '15' }}
+      PUBLICATION_PDF_FORCE: ${{ vars.PUBLICATION_PDF_FORCE || '0' }}
+      PUBLICATION_PDF_STRICT: ${{ vars.PUBLICATION_PDF_STRICT || '0' }}
+      PUBLICATION_PDF_AUTO_DOWNLOAD: ${{ vars.PUBLICATION_PDF_AUTO_DOWNLOAD || '1' }}
+      ORCID_ID: ${{ secrets.ORCID_ID || '0000-0003-2075-366X' }}
+      CROSSREF_EMAIL: ${{ secrets.CROSSREF_EMAIL }}
+      CROSSREF_QUERY_AUTHOR: ${{ secrets.CROSSREF_QUERY_AUTHOR }}
+      UNPAYWALL_EMAIL: ${{ secrets.UNPAYWALL_EMAIL }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Pages
+        if: ${{ env.ACT != 'true' }}
+        uses: actions/configure-pages@v5
+
+      - name: Install Python dependencies
+        run: make install UV_SYNC_FLAGS=--locked
+
+      - name: Update external data
+        run: make update
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Render site
+        run: make render
+
+      - name: Audit publishable content
+        run: make audit
+
+      - name: Upload Pages artifact
+        if: ${{ env.ACT != 'true' }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    if: ${{ github.actor != 'nektos/act' }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

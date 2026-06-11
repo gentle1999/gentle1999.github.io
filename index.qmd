@@ -1,0 +1,71 @@
+---
+title: "Home"
+lang: en
+listing: false
+title-block-style: none
+body-classes: no-default-title
+---
+
+::: {.profile-hero}
+::: {.profile-copy}
+# {{< var profile.name >}}
+
+::: {.profile-role}
+{{< var profile.role >}} · {{< var profile.affiliation >}}
+:::
+
+::: {.profile-aliases}
+{{< var profile.aliases_line >}}
+:::
+
+::: {.profile-summary}
+{{< var profile.research_summary >}}
+:::
+
+::: {.profile-interests}
+**Research interests:** computational chemistry; machine learning for reaction modeling; molecular and reaction data infrastructure; quantum-chemical datasets; cheminformatics.
+:::
+
+::: {.profile-details}
+{{< var profile.academic_line >}}
+:::
+
+::: {.profile-actions}
+[CV](cv.qmd){.quiet-link}
+[PDF CV](/{{< var profile.cv_pdf >}}){.quiet-link}
+[Publications](publications.qmd){.quiet-link}
+[Projects](projects.qmd){.quiet-link}
+[GitHub]({{< var profile.github_url >}}){.quiet-link}
+[Google Scholar]({{< var profile.google_scholar_url >}}){.quiet-link}
+:::
+:::
+
+::: {.profile-aside}
+<img class="profile-photo" src="/{{< var profile.image >}}" alt="{{< var profile.name >}}">
+
+::: {.contact-list}
+**Email**  
+[{{< var profile.email >}}](mailto:{{< var profile.email >}})
+
+**Location**  
+{{< var profile.location >}}
+
+**ORCID**  
+[{{< var profile.orcid >}}]({{< var profile.orcid_url >}})
+
+**Google Scholar**  
+[Profile]({{< var profile.google_scholar_url >}})
+:::
+:::
+:::
+
+## Academic Profile
+
+Miao-Jiong Tang was born in 1999 and is from Hangzhou, Zhejiang. He received his B.S. degree from the Department of Chemistry, Zhejiang University in 2022 under the supervision of Prof. Xin Hong. He entered the graduate program in chemistry at Zhejiang University in 2022 and became a doctoral student in 2025, supervised by Prof. Xin Hong. His research focuses on data-driven organic synthesis reaction modeling and computational acceleration. He currently works on using artificial intelligence methods to accelerate chemical reaction mechanism simulation, connect computational modeling with experimental synthesis, and promote discovery in chemical synthesis.
+
+## Research Directions
+
+- **Mechanism-aware reaction modeling:** machine-learning models for asymmetric catalysis, selectivity prediction, catalyst selection, extrapolation, and structure-reactivity relationships.
+- **Molecular and reaction data infrastructure:** reusable data resources for literature reactions, quantum-chemical calculations, ions, radicals, and transition-metal systems.
+- **Molecular representation:** descriptors and learned representations based on spectra, stereostructures, atomic quantum-chemical properties, graph topology, and reaction bond-change patterns.
+- **Cheminformatics and research software:** Python-based tools that connect molecular data parsing, computation, querying, visualization, and reproducible analysis workflows.

@@ -1,0 +1,16 @@
+{
+  "10.1038/s42256-025-01098-4": {
+    "code_url": "https://github.com/licheng-xu-echo/RXNGraphormer",
+    "code_label": "Code"
+  },
+  "10.1360/tb-2024-0812": {
+    "bibtex_title": "Data-driven prediction of physicochemical properties of organic molecules",
+    "abstract": "This review summarizes data-driven approaches for predicting physicochemical properties of organic molecules.",
+    "volume": "70",
+    "issue": "4-5",
+    "pages": "492-507",
+    "author_replacements": {
+      "Mougui Tang": "Miao-Jiong Tang"
+    }
+  }
+}

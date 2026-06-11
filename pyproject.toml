@@ -1,0 +1,31 @@
+[project]
+name = "gentle1999-academic-homepage"
+version = "0.1.0"
+description = "A Quarto-based personal academic homepage with automated scholarly and GitHub metadata updates."
+requires-python = ">=3.10"
+dependencies = [
+    "ipykernel>=6.29.0",
+    "ipywidgets>=8.1.0",
+    "nbclient>=0.10.0",
+    "nbformat>=5.10.0",
+    "numpy>=1.26.0",
+    "plotly>=5.24.0",
+    "py3Dmol>=2.4.0",
+    "PyYAML>=6.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.8.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

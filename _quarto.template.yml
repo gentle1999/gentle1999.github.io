@@ -1,0 +1,73 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - data/repos.json
+    - data/publications.json
+    - data/publication_images.json
+    - data/publication_pdfs.json
+    - publications.bib
+    - assets/language-switch.html
+    - assets/profile.png
+    - assets/miao-jiong-tang-cv.pdf
+    - assets/tang-miaojiong-cv-zh.pdf
+    - assets/publications/generated/**/*
+    - assets/publications/pdfs/**/*
+  render:
+    - "*.qmd"
+    - "zh/*.qmd"
+    - "works/index.qmd"
+    - "zh/works/index.qmd"
+    - "!_generated/*.qmd"
+
+website:
+  title: ${website_title}
+  site-url: ${site_url}
+  description: ${site_description}
+  repo-url: ${repo_url}
+  navbar:
+    background: "#ffffff"
+    foreground: "#232323"
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "CV"
+        href: cv.qmd
+      - text: "Publications"
+        href: publications.qmd
+      - text: "Projects"
+        href: projects.qmd
+      - text: "Works"
+        href: works/index.qmd
+    right:
+      - text: "中文"
+        href: zh/index.qmd
+      - icon: github
+        href: ${profile_github_url}
+        aria-label: "GitHub"
+      - text: "ORCID"
+        href: ${profile_orcid_url}
+  page-footer:
+    left: ${footer_left}
+
+format:
+  html:
+    lang: en
+    theme: cosmo
+    css: styles.css
+    include-after-body: assets/language-switch.html
+    toc: false
+    toc-location: right
+    smooth-scroll: true
+    code-copy: true
+    anchor-sections: true
+    link-external-newwindow: true
+    date-format: "YYYY-MM-DD"
+
+execute:
+  freeze: false
+  engine: jupyter
+  warning: false
+  message: false
+  daemon: false

@@ -1,0 +1,100 @@
+<script>
+(() => {
+  const pages = [
+    { en: "Home", zh: "首页", enHref: "index.html", zhHref: "zh/index.html" },
+    { en: "CV", zh: "简历", enHref: "cv.html", zhHref: "zh/cv.html" },
+    { en: "Publications", zh: "论文", enHref: "publications.html", zhHref: "zh/publications.html" },
+    { en: "Projects", zh: "项目", enHref: "projects.html", zhHref: "zh/projects.html" },
+    { en: "Works", zh: "展示", enHref: "works/index.html", zhHref: "zh/works/index.html" },
+  ];
+
+  const path = window.location.pathname;
+  const offsetMeta = document.querySelector('meta[name="quarto:offset"]');
+  const siteOffset = offsetMeta?.getAttribute("content") || "./";
+  const isZh = path.includes("/zh/");
+
+  function sitePath(relativePath) {
+    return `${siteOffset}${relativePath}`;
+  }
+
+  function normalizeHtmlPath(relativePath) {
+    const clean = relativePath.replace(/^\.\//, "").replace(/^\/+/, "");
+    if (!clean || clean.endsWith("/")) {
+      return `${clean}index.html`;
+    }
+    return clean.endsWith(".html") ? clean : `${clean}.html`;
+  }
+
+  function currentRelativePath() {
+    const activeLink = document.querySelector("nav.navbar a.nav-link.active");
+    const activeHref = activeLink?.getAttribute("href") || "";
+    const matched = pages.find((page) => {
+      const targets = [page.enHref, page.zhHref];
+      return targets.some((target) => normalizeHtmlPath(activeHref).endsWith(target));
+    });
+    if (matched) {
+      return matched.enHref;
+    }
+
+    const root = new URL(siteOffset, window.location.href);
+    const current = new URL(window.location.href);
+    let relative = decodeURIComponent(current.pathname).replace(decodeURIComponent(root.pathname), "");
+    relative = relative.replace(/^\/+/, "");
+    if (isZh) {
+      relative = relative.replace(/^zh\//, "");
+    }
+    return normalizeHtmlPath(relative);
+  }
+
+  function isCurrentPage(current, page) {
+    if (current === page.enHref) {
+      return true;
+    }
+    return page.enHref === "works/index.html" && current.startsWith("works/");
+  }
+
+  function setLink(link, text, href) {
+    const label = link.querySelector(".menu-text") || link;
+    label.textContent = text;
+    link.setAttribute("href", href);
+  }
+
+  const links = Array.from(document.querySelectorAll("nav.navbar a.nav-link"));
+  const current = currentRelativePath();
+
+  for (const page of pages) {
+    const link = links.find((item) => {
+      const text = item.textContent.trim();
+      return text === page.en || text === page.zh;
+    });
+    if (!link) {
+      continue;
+    }
+    const href = isZh ? page.zhHref : page.enHref;
+    setLink(link, isZh ? page.zh : page.en, sitePath(href));
+    const isActive = isCurrentPage(current, page);
+    link.classList.toggle("active", isActive);
+    if (isActive) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  }
+
+  const languageLink = links.find((item) => {
+    const text = item.textContent.trim();
+    return text === "中文" || text === "English";
+  });
+  if (languageLink) {
+    const counterpart = isZh ? current : `zh/${current}`;
+    setLink(languageLink, isZh ? "English" : "中文", sitePath(counterpart));
+    languageLink.classList.remove("active");
+    languageLink.removeAttribute("aria-current");
+  }
+
+  const brand = document.querySelector("nav.navbar a.navbar-brand");
+  if (brand) {
+    brand.setAttribute("href", sitePath(isZh ? "zh/index.html" : "index.html"));
+  }
+})();
+</script>

@@ -1,0 +1,8 @@
+---
+title: "论文"
+lang: zh
+---
+
+[下载 BibTeX](../publications.bib){.quiet-link}
+
+{{< include ../_generated/publications.zh.qmd >}}

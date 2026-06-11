@@ -1,0 +1,108 @@
+---
+title: "CV"
+lang: en
+title-block-style: none
+body-classes: no-default-title
+---
+
+::: {.cv-header}
+# {{< var profile.name >}} {#cv-name}
+
+{{< var profile.role >}}, {{< var profile.affiliation >}}  
+{{< var profile.location >}} · [{{< var profile.email >}}](mailto:{{< var profile.email >}}) · {{< var profile.phone >}} · CPC member · CET-6  
+[GitHub]({{< var profile.github_url >}}) · [Google Scholar]({{< var profile.google_scholar_url >}}) · [ORCID]({{< var profile.orcid_url >}}) · [PDF CV](/{{< var profile.cv_pdf >}})
+:::
+
+## Summary
+
+Integrated M.S.-Ph.D. student in chemistry at Zhejiang University, working on data-driven organic synthesis reaction modeling and computational acceleration. My research connects asymmetric catalysis, molecular/reaction data infrastructure, quantum-chemical computation, and graph representation learning; first-author papers in *Angew. Chem., Int. Ed.*, *Sci. Data*, and *Chem. Asian J.*, with contribution to the *Nat. Mach. Intell.* RXNGraphormer framework.
+
+## Education
+
+::: {.cv-entry}
+**Zhejiang University · Chemistry, Integrated M.S.-Ph.D.**  
+Department of Chemistry | Research: data-driven organic synthesis reaction modeling and computational acceleration | Advisor: Prof. Xin Hong  
+2022.09 - 2027.06 expected | Hangzhou, China
+
+Research focuses on a closed loop of quantum-chemical computation, data construction, model learning, and reaction applications for asymmetric catalysis, molecular properties, and reaction performance prediction.
+:::
+
+::: {.cv-entry}
+**Zhejiang University · B.S. in Chemistry**  
+Chu Kochen Honors College, Qiushi Chemistry Program | GPA 3.77/4.0 | Advisor: Prof. Xin Hong  
+2018.09 - 2022.06 | Hangzhou, China
+
+Training in chemistry, programming, scientific computing, and machine learning; early research focused on molecular descriptors, spectrum-based representations, and reaction performance prediction.
+:::
+
+## Honors, Awards, and Funding
+
+- Zhejiang University Qiushi Rising Star doctoral funding, 2026
+- Zhejiang University Outstanding Graduate Student; NHU Innovation Scholarship
+- Zhejiang University Outstanding Graduate; Outstanding Communist Youth League Member; MCM Meritorious Winner twice
+- Zhejiang University Academic Scholarship: Second Class once and Third Class twice; Chu Kochen Honors College Elite Student Scholarship; provincial SRTP project; National Chemistry Experiment Innovation Design Competition Third Prize
+
+## Project Experience
+
+::: {.cv-entry}
+**MolGR molecular graph reconstruction toolkit**  
+XYZ-to-RDKit molecular graph reconstruction Python package | 2025.12 - present | Lead developer
+
+Developed a C++/Python toolkit that converts XYZ text, total charge, and spin multiplicity into RDKit molecules with bond orders, 3D conformers, optional dative bonds, and optional stereochemistry. Optimized candidate enumeration, scoring, and RDKit post-processing for organic molecules, metal complexes, and spin-state handling.
+:::
+
+::: {.cv-entry}
+**N,N′-dioxide asymmetric Michael addition modeling platform**  
+First-author paper: *Angew. Chem., Int. Ed.* 2026 | 2024.10 - 2025.08 | First author / lead
+
+Curated N,N′-dioxide/metal-catalyzed Michael addition reactions and built mechanism-aware GNN and similarity-weighted extrapolation workflows for catalyst selection and selectivity prediction.
+:::
+
+::: {.cv-entry}
+**RXNGraphormer unified pre-trained reaction modeling framework**  
+Co-author paper: *Nat. Mach. Intell.* 2025 | 2024.07 - 2025.03 | Algorithm contributor
+
+During internship at Shanghai Academy of AI for Science, designed fictitious reaction generation algorithms for pre-training reaction embeddings, yield/selectivity prediction, and synthesis planning.
+:::
+
+::: {.cv-entry}
+**MolOP molecular computation log parser and data engine**  
+Computational chemistry data parsing and automation toolkit | 2023.10 - present | Lead developer
+
+Developed a type-aware, unit-aware, parallelizable parser and data engine for molecular computation logs, supporting quantum-chemical data production and automated workflows.
+:::
+
+::: {.cv-entry}
+**Tianchi Scientific Intelligence Competition: molecular property prediction**  
+Quantum-chemical energy and force prediction for organic molecules | 2023.08 - 2023.10 | Team member
+
+Used graph neural networks to predict quantum-chemical energies and forces of organic molecules, with model and training-strategy optimization.
+:::
+
+::: {.cv-entry}
+**QM9star molecular dataset and qm9star_query platform**  
+First-author paper: *Sci. Data* 2024 | 2023.03 - 2024.06 | First author / lead
+
+Built a DFT-optimized dataset for ions, radicals, and neutral molecules, plus database queries, API services, GNN examples, and tutorials.
+:::
+
+::: {.cv-entry}
+**Spectrum-based molecular representations for reaction performance prediction**  
+First-author paper: *Chem. Asian J.* 2023 | 2022.04 - 2023.02 | First author / lead
+
+Parsed molecular NMR spectrum images with image-recognition workflows and applied spectrum-derived vectors to reaction performance prediction.
+:::
+
+## Professional Skills
+
+**Machine learning:** Proficient in Python-based research data mining, scripting, and model experimentation; familiar with supervised learning, GNNs, Transformer/pre-training models, and image-processing workflows for molecular property prediction, reaction selectivity, synthesis planning, and spectrum-based representations.
+
+**Computational chemistry:** Experienced with Gaussian, xTB, and related tools; able to combine Python scripts with computation software for mechanism studies, batch optimization, log parsing, and data production; understands electronic structure, transition states, atomic/bond properties, and 3D conformations for molecular representation and model interpretation.
+
+**Cheminformatics:** Experienced with RDKit, OpenBabel, and molecular toolkit extension; able to build molecular and reaction data infrastructure from XYZ/SMILES, computation logs, literature reactions, spectrum images, and quantum-chemical outputs.
+
+**Research engineering:** Experienced in chemical databases, API services, command-line tools, and reproducible data pipelines; familiar with backend development, Linux, CI/CD, containers, and virtualization for maintainable research software and automated workflows.
+
+## Publications
+
+Currently 3 first-author SCI papers and 8 co-authored papers. See the [publications page](publications.qmd) for the complete publication list; the PDF CV lists complete ACS-style citations with representative works first.

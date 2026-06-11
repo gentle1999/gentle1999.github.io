@@ -1,0 +1,43 @@
+profile:
+  name: ${profile_name}
+  name_zh: ${profile_name_zh}
+  aliases: ${profile_aliases}
+  aliases_zh: ${profile_aliases_zh}
+  aliases_line: ${profile_aliases_line}
+  aliases_line_zh: ${profile_aliases_line_zh}
+  role_zh: ${profile_role_zh}
+  affiliation_zh: ${profile_affiliation_zh}
+  role: ${profile_role}
+  affiliation: ${profile_affiliation}
+  advisor: ${profile_advisor}
+  advisor_zh: ${profile_advisor_zh}
+  group: ${profile_group}
+  group_zh: ${profile_group_zh}
+  academic_line: ${profile_academic_line}
+  academic_line_zh: ${profile_academic_line_zh}
+  location: ${profile_location}
+  email: ${profile_email}
+  phone: ${profile_phone}
+  political_status: ${profile_political_status}
+  political_status_zh: ${profile_political_status_zh}
+  english_level: ${profile_english_level}
+  english_level_zh: ${profile_english_level_zh}
+  birth_ym: ${profile_birth_ym}
+  birth_ym_zh: ${profile_birth_ym_zh}
+  image: ${profile_image}
+  github: ${github_username}
+  github_url: ${profile_github_url}
+  orcid: ${profile_orcid}
+  orcid_url: ${profile_orcid_url}
+  google_scholar_url: ${profile_google_scholar_url}
+  cv_pdf: ${profile_cv_pdf}
+  cv_pdf_zh: ${profile_cv_pdf_zh}
+  research_summary: ${profile_research_summary}
+  research_summary_zh: ${profile_research_summary_zh}
+
+site:
+  title: ${website_title}
+  url: ${site_url}
+  repo_url: ${repo_url}
+  description: ${site_description}
+  keywords: ${site_keywords}
