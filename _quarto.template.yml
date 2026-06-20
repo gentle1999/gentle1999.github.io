@@ -67,7 +67,6 @@ format:
 
 execute:
   freeze: false
-  engine: jupyter
   warning: false
   message: false
   daemon: false
