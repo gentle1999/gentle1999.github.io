@@ -4,10 +4,11 @@
 #let muted = rgb("#666666")
 #let body-fonts = (
   "Arial",
+  "Noto Sans CJK SC",
   "WenQuanYi Micro Hei",
   "Liberation Sans",
 )
-#let header-font = "Arial"
+#let header-font = body-fonts
 
 #let icon(path, fill: accent) = box(
   width: 10pt,
