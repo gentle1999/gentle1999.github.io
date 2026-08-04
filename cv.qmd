@@ -99,6 +99,8 @@ Parsed molecular NMR spectrum images with image-recognition workflows and applie
 
 **Computational chemistry:** Experienced with Gaussian, xTB, and related tools; able to combine Python scripts with computation software for mechanism studies, batch optimization, log parsing, and data production; understands electronic structure, transition states, atomic/bond properties, and 3D conformations for molecular representation and model interpretation.
 
+**Ascend and operator optimization:** Experienced with the Huawei Ascend platform and operator optimization; able to deploy and profile workloads, locate performance bottlenecks, and improve operator implementations and data flow for Ascend hardware.
+
 **Cheminformatics:** Experienced with RDKit, OpenBabel, and molecular toolkit extension; able to build molecular and reaction data infrastructure from XYZ/SMILES, computation logs, literature reactions, spectrum images, and quantum-chemical outputs.
 
 **Research engineering:** Experienced in chemical databases, API services, command-line tools, and reproducible data pipelines; familiar with backend development, Linux, CI/CD, containers, and virtualization for maintainable research software and automated workflows.

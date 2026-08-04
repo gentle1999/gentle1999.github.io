@@ -208,6 +208,12 @@
 )
 
 #skill-item(
+  [Ascend and operator optimization],
+  [Experienced with the Huawei Ascend platform and operator optimization; able to deploy and profile workloads, locate performance bottlenecks, and improve operator implementations and data flow for Ascend hardware.],
+  label-width: 4.15cm,
+)
+
+#skill-item(
   [Cheminformatics],
   [Experienced with RDKit, OpenBabel, and molecular toolkit extension; able to build molecular and reaction data infrastructure from XYZ/SMILES, computation logs, literature reactions, spectrum images, and quantum-chemical outputs.],
   label-width: 4.15cm,
