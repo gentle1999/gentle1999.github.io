@@ -40,7 +40,21 @@ Training in chemistry, programming, scientific computing, and machine learning; 
 - Zhejiang University Qiushi Rising Star doctoral funding, 2026
 - Zhejiang University Outstanding Graduate Student; NHU Innovation Scholarship
 - Zhejiang University Outstanding Graduate; Outstanding Communist Youth League Member; MCM Meritorious Winner twice
-- Zhejiang University Academic Scholarship: Second Class once and Third Class twice; Chu Kochen Honors College Elite Student Scholarship; provincial SRTP project; National Chemistry Experiment Innovation Design Competition Third Prize
+- Academic scholarships (Second Class once, Third Class twice); Chu Kochen Honors College Elite Student Scholarship; provincial SRTP project; National Chemistry Experiment Innovation Design Competition Third Prize
+
+## Internship Experience
+
+::: {.cv-entry}
+**Fudan Qingpu Institute of Future Technology** · Research intern | 2026.07 - present
+
+Designed topological-reaction transition-state generation algorithms and optimized Ascend-based training and inference.
+:::
+
+::: {.cv-entry}
+**Shanghai Academy of AI for Science · Matter Science Department** · Algorithm intern | 2024.07 - 2025.03
+
+Designed fictitious reaction generation algorithms for reaction embeddings, yield/selectivity prediction, and synthesis planning.
+:::
 
 ## Project Experience
 
@@ -48,7 +62,7 @@ Training in chemistry, programming, scientific computing, and machine learning; 
 **MolGR molecular graph reconstruction toolkit**  
 XYZ-to-RDKit molecular graph reconstruction Python package | 2025.12 - present | Lead developer
 
-Developed a C++/Python toolkit that converts XYZ text, total charge, and spin multiplicity into RDKit molecules with bond orders, 3D conformers, optional dative bonds, and optional stereochemistry. Optimized candidate enumeration, scoring, and RDKit post-processing for organic molecules, metal complexes, and spin-state handling.
+Developed a C++/Python XYZ-to-RDKit toolkit with bond orders, 3D conformers, optional dative bonds, and stereochemistry; optimized candidate enumeration, scoring, and post-processing for millisecond-level reconstruction and improved metal/spin handling.
 :::
 
 ::: {.cv-entry}
@@ -56,13 +70,6 @@ Developed a C++/Python toolkit that converts XYZ text, total charge, and spin mu
 First-author paper: *Angew. Chem., Int. Ed.* 2026 | 2024.10 - 2025.08 | First author / lead
 
 Curated N,N′-dioxide/metal-catalyzed Michael addition reactions and built mechanism-aware GNN and similarity-weighted extrapolation workflows for catalyst selection and selectivity prediction.
-:::
-
-::: {.cv-entry}
-**RXNGraphormer unified pre-trained reaction modeling framework**  
-Co-author paper: *Nat. Mach. Intell.* 2025 | 2024.07 - 2025.03 | Algorithm contributor
-
-During internship at Shanghai Academy of AI for Science, designed fictitious reaction generation algorithms for pre-training reaction embeddings, yield/selectivity prediction, and synthesis planning.
 :::
 
 ::: {.cv-entry}

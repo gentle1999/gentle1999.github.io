@@ -102,8 +102,28 @@
 
 #cv-honor(
   date: [Undergraduate],
-  title: [Zhejiang University Academic Scholarship: Second Class once and Third Class twice; Chu Kochen Honors College Elite Student Scholarship; provincial SRTP project; National Chemistry Experiment Innovation Design Competition Third Prize],
+  title: [Academic scholarships (Second Class once, Third Class twice); Chu Kochen Honors College Elite Student Scholarship; provincial SRTP project; National Chemistry Experiment Innovation Design Competition Third Prize],
   location: [Scholarship],
+)
+
+#cv-section("Internship Experience")
+
+#project-entry(
+  title: [Fudan Qingpu Institute of Future Technology],
+  date: [2026.07 - present],
+  role: [Research intern],
+  description: list(
+    [Designed topological-reaction transition-state generation algorithms and optimized Ascend-based training and inference.],
+  ),
+)
+
+#project-entry(
+  title: [Shanghai Academy of AI for Science · Matter Science Department],
+  date: [2024.07 - 2025.03],
+  role: [Algorithm intern],
+  description: list(
+    [Designed fictitious reaction generation algorithms for reaction embeddings, yield/selectivity prediction, and synthesis planning.],
+  ),
 )
 
 #cv-section("Project Experience")
@@ -114,8 +134,7 @@
   date: [2025.12 - present],
   role: [Lead developer],
   description: list(
-    [Developed a C++/Python toolkit that converts XYZ text, total charge, and spin multiplicity into RDKit molecules with bond orders, 3D conformers, optional dative bonds, and optional stereochemistry.],
-    [Optimized candidate enumeration, scoring, and RDKit post-processing; internal benchmarks show millisecond-level reconstruction and improved handling of metal/spin systems compared with xyz2graph-like tools.],
+    [Developed a C++/Python XYZ-to-RDKit toolkit with bond orders, 3D conformers, optional dative bonds, and stereochemistry; optimized candidate enumeration, scoring, and post-processing for millisecond-level reconstruction and improved metal/spin handling.],
   ),
 )
 
@@ -126,16 +145,6 @@
   role: [First author / lead],
   description: list(
     [Curated N,N′-dioxide/metal-catalyzed Michael addition reactions and built mechanism-aware GNN and similarity-weighted extrapolation workflows for catalyst selection and selectivity prediction.],
-  ),
-)
-
-#project-entry(
-  title: [RXNGraphormer unified pre-trained reaction modeling framework],
-  outcome: [Co-author paper: #text(style: "italic")[Nat. Mach. Intell.] 2025],
-  date: [2024.07 - 2025.03],
-  role: [Algorithm contributor],
-  description: list(
-    [During internship at Shanghai Academy of AI for Science, designed fictitious reaction generation algorithms for pre-training reaction embeddings, yield/selectivity prediction, and synthesis planning.],
   ),
 )
 
