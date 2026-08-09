@@ -129,7 +129,7 @@
 #cv-section("Project Experience")
 
 #project-entry(
-  title: [MolGR molecular graph reconstruction toolkit],
+  title: [#link("https://github.com/gentle1999/MolGR")[MolGR molecular graph reconstruction toolkit]],
   outcome: [XYZ-to-RDKit molecular graph reconstruction Python package],
   date: [2025.12 - present],
   role: [Lead developer],
@@ -149,7 +149,7 @@
 )
 
 #project-entry(
-  title: [MolOP molecular computation log parser and data engine],
+  title: [#link("https://github.com/gentle1999/MolOP")[MolOP molecular computation log parser and data engine]],
   outcome: [Computational chemistry data parsing and automation toolkit],
   date: [2023.10 - present],
   role: [Lead developer],

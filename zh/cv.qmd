@@ -59,7 +59,7 @@ body-classes: no-default-title
 ## 项目经历
 
 ::: {.cv-entry}
-**MolGR 分子图重建工具**  
+**[MolGR 分子图重建工具](https://github.com/gentle1999/MolGR)**<br>
 XYZ 坐标到 RDKit 分子图的高性能重建 Python 包 | 2025.12 - 至今 | 负责人
 
 开发基于 C++/Python 的 XYZ-RDKit 分子图重建工具，支持键级、三维构象、可选配位键和立体化学信息；优化候选态枚举、评分和后处理，实现毫秒级重建并改善金属与自旋体系处理。
@@ -73,7 +73,7 @@ XYZ 坐标到 RDKit 分子图的高性能重建 Python 包 | 2025.12 - 至今 | 
 :::
 
 ::: {.cv-entry}
-**高效分子计算日志数据提取工具 MolOP**  
+**[高效分子计算日志数据提取工具 MolOP](https://github.com/gentle1999/MolOP)**<br>
 计算化学数据解析与自动化工具 | 2023.10 - 至今 | 负责人
 
 开发类型友好、带数值量纲、支持并行处理的分子计算日志解析与数据引擎，为量子化学数据生产和自动化流程提供工程基础。

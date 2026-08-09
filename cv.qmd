@@ -59,7 +59,7 @@ Designed fictitious reaction generation algorithms for reaction embeddings, yiel
 ## Project Experience
 
 ::: {.cv-entry}
-**MolGR molecular graph reconstruction toolkit**  
+**[MolGR molecular graph reconstruction toolkit](https://github.com/gentle1999/MolGR)**<br>
 XYZ-to-RDKit molecular graph reconstruction Python package | 2025.12 - present | Lead developer
 
 Developed a C++/Python XYZ-to-RDKit toolkit with bond orders, 3D conformers, optional dative bonds, and stereochemistry; optimized candidate enumeration, scoring, and post-processing for millisecond-level reconstruction and improved metal/spin handling.
@@ -73,7 +73,7 @@ Curated N,N′-dioxide/metal-catalyzed Michael addition reactions and built mech
 :::
 
 ::: {.cv-entry}
-**MolOP molecular computation log parser and data engine**  
+**[MolOP molecular computation log parser and data engine](https://github.com/gentle1999/MolOP)**<br>
 Computational chemistry data parsing and automation toolkit | 2023.10 - present | Lead developer
 
 Developed a type-aware, unit-aware, parallelizable parser and data engine for molecular computation logs, supporting quantum-chemical data production and automated workflows.

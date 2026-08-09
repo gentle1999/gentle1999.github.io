@@ -137,7 +137,7 @@
 #cv-section("项目经历")
 
 #project-entry(
-  title: [MolGR 分子图重建工具],
+  title: [#link("https://github.com/gentle1999/MolGR")[MolGR 分子图重建工具]],
   outcome: [XYZ 坐标到 RDKit 分子图的高性能重建 Python 包],
   date: [2025.12 - 至今],
   role: [负责人],
@@ -157,7 +157,7 @@
 )
 
 #project-entry(
-  title: [高效分子计算日志数据提取工具 MolOP],
+  title: [#link("https://github.com/gentle1999/MolOP")[高效分子计算日志数据提取工具 MolOP]],
   outcome: [计算化学数据解析与自动化工具],
   date: [2023.10 - 至今],
   role: [负责人],
